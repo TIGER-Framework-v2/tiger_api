@@ -12,7 +12,8 @@ Follow the steps below to start using it:
 
 
 ```hcl
-version: '3' services:
+version: '3' 
+services:
   influxdb: 
     build:
       context: tiger_influx
@@ -25,9 +26,9 @@ version: '3' services:
       - ./influxdb:/var/lib/influxdb
     environment:
       - INFLUXDB_ADMIN_USER=tiger_admin
-      - INFLUXDB_ADMIN_PASSWORD=admin_password_to_replace
+      - INFLUXDB_ADMIN_PASSWORD=admin
       - INFLUXDB_USER=tiger_user
-      - INFLUXDB_USER_PASSWORD=user_password_to_replace
+      - INFLUXDB_USER_PASSWORD=user
       - INFLUXDB_HTTP_AUTH_ENABLED=true
   db:
     image: postgres:9.6.18
@@ -36,7 +37,7 @@ version: '3' services:
     environment:
       - POSTGRES_USER=tiger_rails
       - POSTGRES_DB=tiger_rails
-      - POSTGRES_PASSWORD=DB_passowrd_to_replace
+      - POSTGRES_PASSWORD=guest
     ports:
       - "5432:5432"
     volumes:
@@ -54,7 +55,7 @@ version: '3' services:
       #- DATABASE_URL: postgres://10.0.2.15:5432/rails_event_store_active_record?pool=5
       - db_name=tiger_rails
       - db_username=tiger_rails
-      - db_password=DB_password_to_replace
+      - db_password=guest
       - db_host=db
       - db_port=5432
     ports:
@@ -62,4 +63,5 @@ version: '3' services:
     depends_on:
       - db
       - influxdb
+
 ```
