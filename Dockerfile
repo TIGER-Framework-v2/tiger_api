@@ -9,7 +9,7 @@ RUN mkdir -p /tiger_api
 RUN mkdir -p /usr/local/nvm
 WORKDIR /tiger_api
 
-RUN curl -sL https://deb.nodesource.com/setup_10.x — Node.js 10 LTS "Dubnium" | bash -
+RUN curl -sL https://deb.nodesource.com/setup_12.x — Node.js 12 LTS "Erbium" | bash -
 RUN apt-get install -y nodejs
 
 RUN node -v
@@ -19,7 +19,7 @@ RUN npm -v
 # the RubyGems. This is a separate step so the dependencies
 # will be cached unless changes to one of those two files
 # are made.
-COPY Gemfile Gemfile.lock package.json ./
+COPY Gemfile Gemfile.lock_ package.json ./
 RUN gem install bundler -v 1.17.2
 RUN gem install foreman -v 0.85.0
 RUN bundle install --verbose 
