@@ -42,11 +42,11 @@
       </tr>
         <tr>
         <td>Docker API client key (key.pem)</td>
-        <td><%= form.text_area(:docker_host_api_key, size:"50x5",:class=>"form_input", value:"Docker client key (key.pem) content. Check https://docs.docker.com/engine/security/https/ for more information ") %></td>
+        <td><%= form.text_area(:docker_host_api_key, size:"50x5",:class=>"form_input", value:"Docker client key (key.pem) content. Default path: /root/.docker/key.pem. Check https://docs.docker.com/engine/security/https/ for more information ") %></td>
       </tr>
         <tr>
         <td>Docker API certificate (cert.pem)</td>
-        <td><%= form.text_area(:docker_host_api_cert, size:"50x5",:class=>"form_input", value:"Docker client certificate (cert.pem) content. Check https://docs.docker.com/engine/security/https/ for more information ") %></td>
+        <td><%= form.text_area(:docker_host_api_cert, size:"50x5",:class=>"form_input", value:"Docker client certificate (cert.pem) content. Default path: /root/.docker/cert.pem. Check https://docs.docker.com/engine/security/https/ for more information ") %></td>
       </tr>
     </table>
     <p>
